@@ -46,9 +46,3 @@ function SolveQuestion() {
 }
 
 export default SolveQuestion;
-
-
-
-
-
-
