@@ -34,14 +34,14 @@ function QuestionHomepage() {
             {
                 questions.map((question) => {
                     return (
-                        <Card class="card" style={{ width: "1000px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
+                        <Card class="card" style={{ width: "1200px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
                             <Card.Body>
-                                <Card.Title>&nbsp;{question.title}</Card.Title>
+                                <Card.Title>{question.title}</Card.Title>
                                 <Card.Text>
-                                    &nbsp;Difficulty:{question.difficulty}&nbsp;&nbsp;|&nbsp; Score:{question.score}&nbsp;&nbsp;|&nbsp;Category:{question.category}
+                                    Difficulty:{question.difficulty}&nbsp;&nbsp;|&nbsp; Score:{question.score}&nbsp;&nbsp;|&nbsp;Category:{question.category}
                                 </Card.Text>
                                 <Card.Text className="overflow-wrap">
-                                    &nbsp;{question.description}&nbsp;
+                                    {question.description}&nbsp;
                                 </Card.Text>
                             </Card.Body>
                         </Card>
