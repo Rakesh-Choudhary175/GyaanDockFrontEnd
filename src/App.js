@@ -27,82 +27,91 @@ function App() {
 
   function fetchHomepageCards() {
     return (
-      <Row>
-        <Col md={3}>
-          <Card style={{ width: '18rem', marginTop: "15px" }}>
-            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
-            <SiMinds style={{ width: "40px", height: "40px", margin: "20px" }} />
-            <Card.Body>
-              <Card.Title><b>Creativity</b></Card.Title>
-              <Card.Text>
-                You will get a chance on experimenting different approaches for coding a solution using your creativity!
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={3}>
-          <Card style={{ width: '18rem', marginTop: "15px" }}>
-            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
-            <BsBarChartLineFill style={{ width: "40px", height: "40px", margin: "20px" }} />
-            <Card.Body>
-              <Card.Title><b>Practice</b></Card.Title>
-              <Card.Text>
-                Challenge yourself to practice everyday!
-                You will get pool of programming questions varying from difficulty levels.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={3}>
-          <Card style={{ width: '18rem', marginTop: "15px" }}>
-            {/* <Card.Img variant="top" src={<FcMindMap/>} style={{height:"300px",width:"300px"}} /> */}
-            <ImPower style={{ width: "40px", height: "40px", margin: "20px" }} />
-            <Card.Body>
-              <Card.Title><b>Confidence</b></Card.Title>
-              <Card.Text>
-                Boost your confidence by solving as many as questions you can!
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={3}>
-          <Card style={{ width: '18rem', marginTop: "15px" }}>
-            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
-            <GiDiscussion style={{ width: "40px", height: "40px", margin: "20px" }} />
-            <Card.Body>
-              <Card.Title><b>Languages</b></Card.Title>
-              <Card.Text>
-                Choose from popular programming languages like C++, Java, Python and much more!
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={3}>
-          <Card style={{ width: '18rem', marginTop: "15px" }}>
-            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
-            <GiDiscussion style={{ width: "40px", height: "40px", margin: "20px" }} />
-            <Card.Body>
-              <Card.Title><b>Discussion Forum</b></Card.Title>
-              <Card.Text>
-                Having any doubts about a coding question? Discuss with your fellow coders on our discussion forum platform.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={3}>
-          <Card style={{ width: '18rem', marginTop: "15px" }}>
-            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
-            <GrUserExpert style={{ width: "40px", height: "40px", margin: "20px" }} />
-            <Card.Body>
-              <Card.Title><b>Expert</b></Card.Title>
-              <Card.Text>
-                We will help you be an expert in your chosen technology if you promise us to keep on practicing!
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+      <Container>
+        <Row>
+          <Col >
+            <Card style={{ width: '18rem', marginTop: "15px" }}>
+              {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+              <SiMinds style={{ width: "40px", height: "40px", margin: "20px", display: "flex", justifyContent: "center" }} />
+              <Card.Body>
+                <Card.Title style={{ textAlign: "center" }}><b>Creativity</b></Card.Title>
+                <Card.Text>
+                  You will get a chance on experimenting different approaches for coding a solution using your creativity!
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col >
+            <Card style={{ width: '18rem', marginTop: "15px" }}>
+              {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+              <BsBarChartLineFill style={{ width: "40px", height: "40px", margin: "20px" }} />
+              <Card.Body>
+                <Card.Title style={{ textAlign: "center" }}><b>Practice</b></Card.Title>
+                <Card.Text>
+                  Challenge yourself to practice everyday!
+                  You will get pool of programming questions varying from difficulty levels.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col >
+            <Card style={{ width: '18rem', marginTop: "15px" }}>
+              {/* <Card.Img variant="top" src={<FcMindMap/>} style={{height:"300px",width:"300px"}} /> */}
+              <ImPower style={{ width: "40px", height: "40px", margin: "20px" }} />
+              <Card.Body>
+                <Card.Title style={{ textAlign: "center" }}><b>Confidence</b></Card.Title>
+                <Card.Text>
+                  Boost your confidence by solving as many as questions you can!
+                  <br />
+                  <br />
+                  <br />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col >
+            <Card style={{ width: '18rem', marginTop: "15px" }}>
+              {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+              <TbMessageLanguage style={{ width: "40px", height: "40px", margin: "20px" }} />
+              <Card.Body>
+                <Card.Title style={{ textAlign: "center" }}><b>Languages</b></Card.Title>
+                <Card.Text>
+                  Choose from popular programming languages like C++, Java, Python and much more!
+                  <br />
+                  <br />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col >
+            <Card style={{ width: '18rem', marginTop: "15px" }}>
+              {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+              <GiDiscussion style={{ width: "40px", height: "40px", margin: "20px" }} />
+              <Card.Body>
+                <Card.Title style={{ textAlign: "center" }}><b>Discussion Forum</b></Card.Title>
+                <Card.Text>
+                  Having any doubts about a coding question? Discuss with your fellow coders on our discussion forum platform.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: '18rem', marginTop: "15px" }}>
+              {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+              <GrUserExpert style={{ width: "40px", height: "40px", margin: "20px" }} />
+              <Card.Body>
+                <Card.Title style={{ textAlign: "center" }}><b>Expert</b></Card.Title>
+                <Card.Text>
+                  We will help you be an expert in your chosen technology if you promise us to keep on practicing!
+                  <br />
+                  <br />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
 
-      </Row>
+        </Row>
+      </Container >
     );
   }
 
