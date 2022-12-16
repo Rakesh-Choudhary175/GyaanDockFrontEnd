@@ -1,8 +1,6 @@
 import React from "react";
 import Header from "../Header";
 import { Card, Button } from "react-bootstrap";
-import styles from "./SolveQuestion.css";
-
 function SolveQuestion() {
     return (
         // <div>
