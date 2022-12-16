@@ -119,8 +119,8 @@ function App() {
     return (
       <Row>
         <Col>
-          <h4 style={{ marginTop: "100px", marginLeft: "30px" }}>Welcome To Gyaandock.</h4>
-          <h5 style={{ marginLeft: "30px" }}>Bring your ships of curiosity here!</h5>
+          <h1 style={{ marginTop: "100px", marginLeft: "30px", fontSize: "50px" }}>Welcome To GyaanDock.</h1>
+          <h4 style={{ marginLeft: "30px", color: "rgb(0,152,186)", fontSize: "25px" }}>Bring your ships of curiosity here!</h4>
           <p style={{ marginLeft: "30px" }}>Enhance your coding skills with us in a variety of technical domains.</p>
         </Col>
         <Col>
