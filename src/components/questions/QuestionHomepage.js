@@ -29,12 +29,14 @@ function QuestionHomepage() {
 
     function fetchQuestionDetails(question) {
         // alert("Question clicked:"+question.id)
-        if(localStorage.getItem("jwtToken") == null){
+        if (localStorage.getItem("jwtToken") == null) {
             alert("Please login to attempt the question");
             return;
-        }else{
-            navigate('/questions/'+question.id)
+        } else {
+            navigate('/questions/' + question.id)
         }
+
+
     }
 
     return (
@@ -81,6 +83,7 @@ function QuestionHomepage() {
                         <Dropdown.Item href="#">Inheritance</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+                <p></p>
 
             </>
             {
