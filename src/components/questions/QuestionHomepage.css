@@ -1,6 +1,5 @@
 .overflow-wrap {
-    width: 900px;
-    font-size: 1.5vw;
+    width: 1180px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
