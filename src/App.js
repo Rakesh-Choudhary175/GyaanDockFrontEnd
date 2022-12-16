@@ -13,9 +13,10 @@ import { FcMindMap } from "react-icons/fc"
 import { SiMinds } from "react-icons/si"
 import { BsBarChartLineFill } from "react-icons/bs"
 import { ImPower } from "react-icons/im"
-// import {TbMessageLanguage} from "react-icons/tb"
+import { TbMessageLanguage } from "react-icons/tb"
 import { GiDiscussion } from "react-icons/gi"
 import { GrUserExpert } from "react-icons/gr"
+import HomepageCards from './components/HomepageCards/HomepageCards';
 
 
 function App() {
@@ -139,10 +140,11 @@ function App() {
         fetchDescription()
       }
 
-      {
+      {/* {
         fetchHomepageCards()
-
-      }
+        
+      } */}
+      <HomepageCards />
     </div>
     // <Container>
     //   <Row className="justify-content-md-center">
