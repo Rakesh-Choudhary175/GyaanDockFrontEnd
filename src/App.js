@@ -30,7 +30,7 @@ function App() {
     return (
       <Row>
         <Col md={3}>
-          <Card style={{ width: '18rem', margin: "5px" }}>
+          <Card style={{ width: '18rem', marginTop: "15px" }}>
             {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
             <SiMinds style={{ width: "40px", height: "40px", margin: "20px" }} />
             <Card.Body>
@@ -42,7 +42,7 @@ function App() {
           </Card>
         </Col>
         <Col md={3}>
-          <Card style={{ width: '18rem', margin: "5px" }}>
+          <Card style={{ width: '18rem', marginTop: "15px" }}>
             {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
             <BsBarChartLineFill style={{ width: "40px", height: "40px", margin: "20px" }} />
             <Card.Body>
@@ -55,7 +55,7 @@ function App() {
           </Card>
         </Col>
         <Col md={3}>
-          <Card style={{ width: '18rem', margin: "5px" }}>
+          <Card style={{ width: '18rem', marginTop: "15px" }}>
             {/* <Card.Img variant="top" src={<FcMindMap/>} style={{height:"300px",width:"300px"}} /> */}
             <ImPower style={{ width: "40px", height: "40px", margin: "20px" }} />
             <Card.Body>
@@ -67,7 +67,7 @@ function App() {
           </Card>
         </Col>
         <Col md={3}>
-          <Card style={{ width: '18rem', margin: "5px" }}>
+          <Card style={{ width: '18rem', marginTop: "15px" }}>
             {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
             <GiDiscussion style={{ width: "40px", height: "40px", margin: "20px" }} />
             <Card.Body>
@@ -79,7 +79,7 @@ function App() {
           </Card>
         </Col>
         <Col md={3}>
-          <Card style={{ width: '18rem', margin: "5px" }}>
+          <Card style={{ width: '18rem', marginTop: "15px" }}>
             {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
             <GiDiscussion style={{ width: "40px", height: "40px", margin: "20px" }} />
             <Card.Body>
@@ -91,7 +91,7 @@ function App() {
           </Card>
         </Col>
         <Col md={3}>
-          <Card style={{ width: '18rem', margin: "5px" }}>
+          <Card style={{ width: '18rem', marginTop: "15px" }}>
             {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
             <GrUserExpert style={{ width: "40px", height: "40px", margin: "20px" }} />
             <Card.Body>
@@ -144,7 +144,10 @@ function App() {
         fetchHomepageCards()
         
       } */}
-      <HomepageCards />
+      {
+        fetchHomepageCards()
+      }
+      {/* <HomepageCards /> */}
     </div>
     // <Container>
     //   <Row className="justify-content-md-center">
