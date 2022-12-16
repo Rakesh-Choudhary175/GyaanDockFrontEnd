@@ -29,7 +29,13 @@ function QuestionHomepage() {
 
     function fetchQuestionDetails(question) {
         // alert("Question clicked:"+question.id)
-        navigate('/questions/'+question.id)
+        if(localStorage.getItem("jwtToken") == null){
+            alert("Please login to attempt the question");
+            return;
+        }else{
+            navigate('/questions/'+question.id)
+        }
+        
 
     }
 
