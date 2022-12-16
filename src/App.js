@@ -16,6 +16,7 @@ import {ImPower} from "react-icons/im"
 import {TbMessageLanguage} from "react-icons/tb"
 import {GiDiscussion} from "react-icons/gi"
 import {GrUserExpert} from "react-icons/gr"
+import HomepageCards from './components/HomepageCards/HomepageCards';
  
 
 function App() {
@@ -139,10 +140,11 @@ You will get pool of programming questions varying from difficulty levels.
         fetchDescription()
       }
 
-      {
+      {/* {
         fetchHomepageCards()
         
-      }
+      } */}
+      <HomepageCards/>
     </div>
     // <Container>
     //   <Row className="justify-content-md-center">
