@@ -11,7 +11,7 @@ function QuestionHomepage() {
     const [questions, SetQuestions] = useState([]);
     const [filteredQuestions, SetFilteredQuestions] = useState([]);
     const [areQuestionsFetched, SetAreQuestionsFetched] = useState(false);
-    
+    const [category, SetCategory] = useState([]);
 
     const navigate = useNavigate();
 
@@ -19,10 +19,13 @@ function QuestionHomepage() {
         if (!areQuestionsFetched) {
             axios.get(url + "/api/v1/question").then(function (response) {
                 console.log("success:", response.data);
+                var set = new Set();
                 response.data.data.question.map((question) => {
                     questions.push(question);
+                    set.add(question.category);
                     filteredQuestions.push(question);
                 })
+                SetCategory([...set]);
                 SetAreQuestionsFetched(true);
             }).catch(function (error) {
                 console.log(error);
@@ -91,6 +94,19 @@ function QuestionHomepage() {
         alert("Unsolved Clicked");
     }
 
+    function handleCategoryClick(cat){
+        // alert("Category Clicked:"+cat);
+        var arr=[];
+        questions.map((question)=>{
+            if(question.category===cat){
+                arr.push(question);
+            }
+        
+        })
+        SetFilteredQuestions([...arr]);
+
+    }
+
     return (
         <div>
             <Header />
@@ -130,11 +146,21 @@ function QuestionHomepage() {
                         Category
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
+                    {/* <Dropdown.Menu>
                         <Dropdown.Item href="#">String</Dropdown.Item>
                         <Dropdown.Item href="#">Classes</Dropdown.Item>
                         <Dropdown.Item href="#">STL</Dropdown.Item>
                         <Dropdown.Item href="#">Inheritance</Dropdown.Item>
+                    </Dropdown.Menu> */}
+                    <Dropdown.Menu>
+                        {
+                            category.map((cat) => {
+                                return (
+                                    <Dropdown.Item href="#" onClick={()=>handleCategoryClick(cat)}>{cat}</Dropdown.Item>
+                                )
+                            })
+                        }
+                        <Dropdown.Item href="#" onClick={handleAllClick}>All</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <p></p>
