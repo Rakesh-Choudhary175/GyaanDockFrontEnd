@@ -29,17 +29,13 @@ function QuestionHomepage() {
 
     function fetchQuestionDetails(question) {
         // alert("Question clicked:"+question.id)
-<<<<<<< HEAD
-        navigate('/questions/' + question.id)
-=======
-        if(localStorage.getItem("jwtToken") == null){
+        if (localStorage.getItem("jwtToken") == null) {
             alert("Please login to attempt the question");
             return;
-        }else{
-            navigate('/questions/'+question.id)
+        } else {
+            navigate('/questions/' + question.id)
         }
-        
->>>>>>> 3648a1d4619e2e018bbddd70810c56af4a07558f
+
 
     }
 
@@ -87,6 +83,7 @@ function QuestionHomepage() {
                         <Dropdown.Item href="#">Inheritance</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+                <p></p>
 
             </>
             {
