@@ -83,7 +83,7 @@ function App() {
               </Card.Body>
             </Card>
           </Col>
-          <Col >
+          <Col md={3} >
             <Card style={{ width: '18rem', marginTop: "15px" }}>
               {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
               <GiDiscussion style={{ width: "40px", height: "40px", margin: "20px" }} />
@@ -95,7 +95,7 @@ function App() {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
+          <Col md={3}>
             <Card style={{ width: '18rem', marginTop: "15px" }}>
               {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
               <GrUserExpert style={{ width: "40px", height: "40px", margin: "20px" }} />
