@@ -121,6 +121,10 @@ function Auth(){
             // console.log(response)
             console.log(response.data);
             localStorage.setItem("jwtToken",response.data.token);
+            localStorage.setItem("userId",response.data.data.user._id);
+            localStorage.setItem("userName",response.data.data.user.name);
+            localStorage.setItem("userEmail",response.data.data.user.email);
+            localStorage.setItem("userScore",response.data.data.user.score);
             window.location.reload();
             // alert("Login Successfull")
         }).catch(function(error){
@@ -135,7 +139,7 @@ function Auth(){
             <Container>
             {
                 (isUserLoggedIn==true)?(
-                    <UserProfile/>
+                    <UserProfile />
                 ):(
                     (isLoginPage==false)?(
                         <Form>
