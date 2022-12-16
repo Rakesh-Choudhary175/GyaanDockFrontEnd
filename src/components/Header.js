@@ -15,24 +15,24 @@ function Header() {
     return (
         <div>
             <Row>
-                <Col md={1}>
-                    <img src={logo} style={{ textAlign: "right", height: "50px", width: "50px", margin: "5px" }} />
+                <nav class="navbar navbar-light">
+                    <a class="navbar-brand" href="#">
+                        <img src={logo} style={{ textAlign: "right", height: "50px", width: "50px", margin: "5px" }} />
+                        Gyaandock
+                    </a>
+                    <Col md={7}>
+                    </Col>
+                    <Col md={1} style={{ marginTop: "20px" }}>
+                        <Button variant="outline-primary" onClick={getQuestions}>Questions</Button>
+                    </Col>
+                    <Col md={1} style={{ marginTop: "20px" }}>
+                        <Button variant="outline-primary">Challenges</Button>
+                    </Col>
+                    <Col md={1} style={{ marginTop: "20px" }}>
+                        <Button variant="outline-primary">Sign In</Button>
+                    </Col>
+                </nav>
 
-                </Col>
-                <Col md={1}>
-                    <h5 style={{ margin: "20px", textAlign: "left" }}>Gyaandock</h5>
-                </Col>
-                <Col md={6}>
-                </Col>
-                <Col md={1} style={{ marginTop: "20px" }}>
-                    <Button variant="outline-primary" onClick={getQuestions}>Questions</Button>
-                </Col>
-                <Col md={1} style={{ marginTop: "20px" }}>
-                    <Button variant="outline-primary">Challenges</Button>
-                </Col>
-                <Col md={1} style={{ marginTop: "20px" }}>
-                    <Button variant="outline-primary">Sign In</Button>
-                </Col>
             </Row>
             <br />
 

@@ -34,17 +34,20 @@ function QuestionHomepage() {
             {
                 questions.map((question) => {
                     return (
-                        <Card class="card" style={{ width: "1200px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
-                            <Card.Body>
-                                <Card.Title>{question.title}</Card.Title>
-                                <Card.Text>
-                                    Difficulty:{question.difficulty}&nbsp;&nbsp;|&nbsp; Score:{question.score}&nbsp;&nbsp;|&nbsp;Category:{question.category}
-                                </Card.Text>
-                                <Card.Text className="overflow-wrap">
-                                    {question.description}&nbsp;
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+                        <>
+                            <Card class="card" style={{ width: "1200px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
+                                <Card.Body>
+                                    <Card.Title>{question.title}</Card.Title>
+                                    <Card.Text>
+                                        Difficulty:{question.difficulty}&nbsp;&nbsp;|&nbsp; Score:{question.score}&nbsp;&nbsp;|&nbsp;Category:{question.category}
+                                    </Card.Text>
+                                    <Card.Text className="overflow-wrap">
+                                        {question.description}&nbsp;
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                            <br />
+                        </>
                     );
                 })
             }
