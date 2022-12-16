@@ -4,11 +4,14 @@ import { Card, Button } from "react-bootstrap";
 import Header from "../Header";
 import url from "../../Uri";
 import "./QuestionHomepage.css"
+import { useNavigate } from "react-router-dom";
 
 function QuestionHomepage() {
 
     const [questions, SetQuestions] = useState([]);
     const [areQuestionsFetched, SetAreQuestionsFetched] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!areQuestionsFetched) {
@@ -24,8 +27,9 @@ function QuestionHomepage() {
         }
     })
 
-    function fetchQuestionDetails() {
-        alert("Question clicked")
+    function fetchQuestionDetails(question) {
+        // alert("Question clicked:"+question.id)
+        navigate('/questions/'+question.id)
 
     }
 
@@ -35,8 +39,8 @@ function QuestionHomepage() {
             {
                 questions.map((question) => {
                     return (
-                        <>
-                            <Card className="question" style={{ width: "1200px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
+                        <div>
+                            <Card className="question" style={{ width: "1200px", marginLeft: "20px" }} onClick={()=>fetchQuestionDetails(question)}>
                                 <Card.Body>
                                     <Card.Title>{question.title}</Card.Title>
                                     <Card.Text>
@@ -48,7 +52,7 @@ function QuestionHomepage() {
                                 </Card.Body>
                             </Card>
                             <br />
-                        </>
+                        </div>
                     );
                 })
             }
