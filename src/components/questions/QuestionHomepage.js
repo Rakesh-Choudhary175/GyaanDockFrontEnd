@@ -26,6 +26,7 @@ function QuestionHomepage() {
 
     function fetchQuestionDetails() {
         alert("Question clicked")
+
     }
 
     return (

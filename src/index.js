@@ -14,6 +14,7 @@ root.render(
       <Route path='/' element={<App />} />
       <Route path='/questions' element={<QuestionHomepage />} />
       <Route path='/aboutUs' element={<AboutUspage />} />
+      <Route path='/questions/:id' element={<QuestionHomepage />} />
     </Routes>
   </HashRouter>
 );
