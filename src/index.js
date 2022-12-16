@@ -7,6 +7,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import QuestionHomepage from './components/questions/QuestionHomepage';
 import AboutUspage from './components/aboutUs/aboutUs';
 import SolveQuestion from './components/questions/SolveQuestion';
+import Auth from './components/auth/Auth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Route path='/questions' element={<QuestionHomepage />} />
       <Route path='/aboutUs' element={<AboutUspage />} />
       <Route path='/questions/:id' element={<SolveQuestion />} />
+      <Route path='/signIn' element={<Auth/>}/>
     </Routes>
   </HashRouter>
 );

@@ -3,6 +3,7 @@ import logo from "../assets/logo.png"
 import { Button, Col, Row } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
+import {FaUserAlt} from "react-icons/fa"
 
 function Header() {
 
@@ -15,6 +16,9 @@ function Header() {
         navigate('/aboutUs')
     }
 
+    function handleSignIn(){
+        navigate('/signIn')
+    }
     return (
         <div>
             <Row>
@@ -32,7 +36,7 @@ function Header() {
                         <Button variant="outline-primary" onClick={aboutUs}>About Us</Button>
                     </Col>
                     <Col md={1} style={{ marginTop: "20px" }}>
-                        <Button variant="outline-primary">Sign In</Button>
+                        <Button variant="outline-primary" onClick={handleSignIn}><FaUserAlt/>Sign In</Button>
                     </Col>
                 </nav>
 
