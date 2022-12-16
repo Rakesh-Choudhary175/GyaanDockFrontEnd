@@ -5,13 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import QuestionHomepage from './components/questions/QuestionHomepage';
+import AboutUspage from './components/aboutUs/aboutUs';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
     <Routes>
       <Route path='/' element={<App />} />
-      <Route path='/questions' element={<QuestionHomepage/>}/>
+      <Route path='/questions' element={<QuestionHomepage />} />
+      <Route path='/aboutUs' element={<AboutUspage />} />
     </Routes>
   </HashRouter>
 );

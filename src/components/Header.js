@@ -11,14 +11,17 @@ function Header() {
     function getQuestions() {
         navigate('/questions')
     }
+    function aboutUs() {
+        navigate('/aboutUs')
+    }
 
     return (
         <div>
             <Row>
                 <nav class="navbar navbar-light">
                     <a class="navbar-brand" href="#">
-                        <img src={logo} style={{ textAlign: "right", height: "50px", width: "50px", margin: "5px" }} />
-                        Gyaandock
+                        <img src={logo} style={{ textAlign: "right", height: "50px", width: "50px", marginLeft: "40px" }} />
+                        &nbsp;&nbsp;Gyaandock
                     </a>
                     <Col md={7}>
                     </Col>
@@ -26,7 +29,7 @@ function Header() {
                         <Button variant="outline-primary" onClick={getQuestions}>Questions</Button>
                     </Col>
                     <Col md={1} style={{ marginTop: "20px" }}>
-                        <Button variant="outline-primary">Challenges</Button>
+                        <Button variant="outline-primary" onClick={aboutUs}>About Us</Button>
                     </Col>
                     <Col md={1} style={{ marginTop: "20px" }}>
                         <Button variant="outline-primary">Sign In</Button>

@@ -35,7 +35,7 @@ function QuestionHomepage() {
                 questions.map((question) => {
                     return (
                         <>
-                            <Card class="card" style={{ width: "1200px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
+                            <Card className="question" style={{ width: "1200px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
                                 <Card.Body>
                                     <Card.Title>{question.title}</Card.Title>
                                     <Card.Text>
