@@ -76,7 +76,8 @@ function Auth(){
         setLoginPassword(event.target.value);
     }
 
-    function registerUser(){
+    function registerUser(event){
+        event.preventDefault();
         if(password != confirmPassword){
             alert("Password and Confirm Password do not match");
             return;
@@ -84,13 +85,48 @@ function Auth(){
         else if(name=="" || email=="" || password=="" || confirmPassword==""){
             alert("Please fill all the fields");
             return;
+        }else if(password.length<8){
+            alert("Password should be atleast 8 characters long");
+            return;
         }else{
-            alert("Register Successfull");
+            var formBody={
+                "name":name,
+                "email":email,
+                "password":password,
+                "passwordConfirm":confirmPassword
+            }
+
+            axios.post(url+"/api/v1/user/signup",formBody).then(function(response){
+                console.log(response)
+                console.log(response.data);
+                localStorage.setItem("jwtToken",response.data.token);
+                window.location.reload();
+                // alert("Register Successfull");
+            }).catch(function(error){
+                console.log(error)
+                alert("User already exists");
+            })
+            // alert("Register Successfull");
         }  
     }
 
-    function loginUser(){
-        alert("Login User:"+email+" "+password);
+    function loginUser(event){
+        // alert("Login User:"+email+" "+password);
+        event.preventDefault();
+        var formBody={
+            "email":loginEmail,
+            "password":loginPassword
+        }
+        axios.post(url+"/api/v1/user/login",formBody).then(function(response){
+            // console.log(response)
+            console.log(response.data);
+            localStorage.setItem("jwtToken",response.data.token);
+            window.location.reload();
+            // alert("Login Successfull")
+        }).catch(function(error){
+            console.log(error)
+            alert(error.response.data.message)
+        })
     }
 
     return(
@@ -154,7 +190,7 @@ function Auth(){
                 )
             }
             </Container>
-            <Button onClick={toggleLogin}>Change Status</Button>
+            {/* <Button onClick={toggleLo   gin}>Change Status</Button> */}
         </div>
     );
 }
