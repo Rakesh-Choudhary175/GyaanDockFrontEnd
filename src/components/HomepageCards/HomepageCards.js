@@ -1,15 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 import styles from "./HomepageDiv2.module.css";
-import {FcMindMap} from "react-icons/fc"
-import {SiMinds} from "react-icons/si"
-import {BsBarChartLineFill} from "react-icons/bs"
-import {ImPower} from "react-icons/im"
-import {TbMessageLanguage} from "react-icons/tb"
-import {GiDiscussion} from "react-icons/gi"
-import {GrUserExpert} from "react-icons/gr"
+import { FcMindMap } from "react-icons/fc"
+import { SiMinds } from "react-icons/si"
+import { BsBarChartLineFill } from "react-icons/bs"
+import { ImPower } from "react-icons/im"
+import { TbMessageLanguage } from "react-icons/tb"
+import { GiDiscussion } from "react-icons/gi"
+import { GrUserExpert } from "react-icons/gr"
 const HomepageCards = () => {
-   
+
   return (
     <div className={styles.homepageDiv2}>
       <div className={styles.groupDiv}>
@@ -20,7 +20,7 @@ const HomepageCards = () => {
               You will get a chance on experimenting different approaches for
               coding a solution using your creativity!
             </div>
-            
+
           </div>
           <div className={styles.div1}>
             <b className={styles.languages}>Languages</b>
@@ -30,7 +30,7 @@ const HomepageCards = () => {
             </div>
             <TbMessageLanguage
               className={styles.archiveContent1Icon}
-            
+
             />
           </div>
           <div className={styles.div2}>
@@ -65,8 +65,8 @@ const HomepageCards = () => {
             <ImPower className={styles.board21Icon} />
           </div>
           <FcMindMap
-              className={styles.archiveContent1Icon}
-            />
+            className={styles.archiveContent1Icon}
+          />
         </div>
       </div>
     </div>
