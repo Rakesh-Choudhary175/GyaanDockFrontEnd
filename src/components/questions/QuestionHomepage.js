@@ -34,6 +34,7 @@ function QuestionHomepage() {
             {
                 questions.map((question) => {
                     return (
+                        <>
                         <Card class="card" style={{ width: "1000px", marginLeft: "20px" }} onClick={fetchQuestionDetails}>
                             <Card.Body>
                                 <Card.Title>&nbsp;{question.title}</Card.Title>
@@ -45,6 +46,8 @@ function QuestionHomepage() {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
+                        <br/>
+                        </>
                     );
                 })
             }

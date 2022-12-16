@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import homeIcon from "./assets/homeIcon.png"
 
 
 
@@ -39,6 +40,21 @@ function App() {
     );
   }
 
+  function fetchDescription(){
+    return (
+      <Row>
+        <Col>
+          <h4 style={{marginTop:"100px",marginLeft:"30px"}}>Welcome To Gyaandock.</h4>
+          <h5 style={{marginLeft:"30px"}}>Bring your ships of curiosity here!</h5>
+          <p style={{marginLeft:"30px"}}>Enhance your coding skills with us in a variety of technical domains.</p>
+        </Col>
+        <Col>
+            <img src={homeIcon} style={{width:"500px",height:"500px"}}/>
+        </Col>
+      </Row>
+    );
+  }
+
   return (
     <div >
       <Header/>
@@ -53,7 +69,10 @@ function App() {
       </Container> */}
 
       <br/>
-      
+      {
+        fetchDescription()
+      }
+
       {
         fetchHomepageCards()
         
