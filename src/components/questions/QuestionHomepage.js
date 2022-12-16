@@ -9,7 +9,9 @@ import { useNavigate } from "react-router-dom";
 function QuestionHomepage() {
 
     const [questions, SetQuestions] = useState([]);
+    const [filteredQuestions, SetFilteredQuestions] = useState([]);
     const [areQuestionsFetched, SetAreQuestionsFetched] = useState(false);
+    
 
     const navigate = useNavigate();
 
@@ -19,6 +21,7 @@ function QuestionHomepage() {
                 console.log("success:", response.data);
                 response.data.data.question.map((question) => {
                     questions.push(question);
+                    filteredQuestions.push(question);
                 })
                 SetAreQuestionsFetched(true);
             }).catch(function (error) {
@@ -39,6 +42,55 @@ function QuestionHomepage() {
 
     }
 
+    function handleEasyClick(){
+        // alert("Easy Clicked");
+        var arr=[];
+        questions.map((question)=>{
+            if(question.difficulty=="easy"){
+                arr.push(question);
+            }
+        })
+        SetFilteredQuestions([...arr]);
+    }
+
+    function handleMediumClick(){
+        // alert("Medium Clicked");
+        var arr=[];
+        questions.map((question)=>{
+            if(question.difficulty==="medium"){
+                arr.push(question);
+            }
+        }
+        )
+        SetFilteredQuestions([...arr]);
+    }
+
+    function handleHardClick(){
+        // alert("Hard Clicked");
+        var arr=[];
+        questions.map((question)=>{
+            if(question.difficulty==="hard"){
+                arr.push(question);
+            }
+        }
+        )
+        SetFilteredQuestions([...arr]);
+
+    }
+
+    function handleAllClick(){
+        // alert("All Clicked");
+        SetFilteredQuestions([...questions]);
+    }
+
+    function handleSolvedClick(){
+        alert("Solved Clicked");
+    }
+
+    function handleUnsolvedClick(){
+        alert("Unsolved Clicked");
+    }
+
     return (
         <div>
             <Header />
@@ -49,9 +101,10 @@ function QuestionHomepage() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#">Easy</Dropdown.Item>
-                        <Dropdown.Item href="#">Medium</Dropdown.Item>
-                        <Dropdown.Item href="#">Hard</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={handleEasyClick}>Easy</Dropdown.Item>
+                        <Dropdown.Item href="#"onClick={handleMediumClick}>Medium</Dropdown.Item>
+                        <Dropdown.Item href="#"onClick={handleHardClick}>Hard</Dropdown.Item>
+                        <Dropdown.Item href="#"onClick={handleAllClick}>All</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -63,8 +116,9 @@ function QuestionHomepage() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#">Solved</Dropdown.Item>
-                        <Dropdown.Item href="#">Unsolved</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={handleSolvedClick}>Solved</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={handleUnsolvedClick}>Unsolved</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={handleAllClick}>All</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 
@@ -87,7 +141,7 @@ function QuestionHomepage() {
 
             </>
             {
-                questions.map((question) => {
+                filteredQuestions.map((question) => {
                     return (
                         <div>
                             <Card className="question" style={{ width: "1200px", marginLeft: "20px" }} onClick={() => fetchQuestionDetails(question)}>
