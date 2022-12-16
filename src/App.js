@@ -9,8 +9,14 @@ import { Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import homeIcon from "./assets/homeIcon.png"
-
-
+import {FcMindMap} from "react-icons/fc"
+import {SiMinds} from "react-icons/si"
+import {BsBarChartLineFill} from "react-icons/bs"
+import {ImPower} from "react-icons/im"
+import {TbMessageLanguage} from "react-icons/tb"
+import {GiDiscussion} from "react-icons/gi"
+import {GrUserExpert} from "react-icons/gr"
+ 
 
 function App() {
 
@@ -24,79 +30,74 @@ function App() {
       <Row>
         <Col md={3}>
         <Card style={{ width: '18rem' ,margin:"5px"}}>
-            <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} />
+            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+            <SiMinds style={{width:"40px",height:"40px", margin:"20px"}}/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title><b>Creativity</b></Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              You will get a chance on experimenting different approaches for coding a solution using your creativity!
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
         <Card style={{ width: '18rem' ,margin:"5px"}}>
-            <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} />
+            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+            <BsBarChartLineFill style={{width:"40px",height:"40px", margin:"20px"}}/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title><b>Practice</b></Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Challenge yourself to practice everyday!
+You will get pool of programming questions varying from difficulty levels. 
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
         <Card style={{ width: '18rem',margin:"5px" }}>
-            <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} />
+            {/* <Card.Img variant="top" src={<FcMindMap/>} style={{height:"300px",width:"300px"}} /> */}
+            <ImPower style={{width:"40px",height:"40px", margin:"20px"}}/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title><b>Confidence</b></Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Boost your confidence by solving as many as questions you can!
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
         <Card style={{ width: '18rem',margin:"5px" }}>
-            <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} />
+            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+            <TbMessageLanguage style={{width:"40px",height:"40px", margin:"20px"}}/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title><b>Languages</b></Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Choose from popular programming languages like C++, Java, Python and much more!
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
         <Card style={{ width: '18rem',margin:"5px" }}>
-            <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} />
+            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+            <GiDiscussion style={{width:"40px",height:"40px", margin:"20px"}}/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title><b>Discussion Forum</b></Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Having any doubts about a coding question? Discuss with your fellow coders on our discussion forum platform.
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
         <Card style={{ width: '18rem',margin:"5px" }}>
-            <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} />
+            {/* <Card.Img variant="top" src={homeIcon} style={{height:"300px",width:"300px"}} /> */}
+            <GrUserExpert style={{width:"40px",height:"40px", margin:"20px"}}/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title><b>Expert</b></Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              We will help you be an expert in your chosen technology if you promise us to keep on practicing!
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
