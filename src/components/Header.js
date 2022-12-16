@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png"
-import {Col, Row} from "react-bootstrap";
+import {Button, Col, Row} from "react-bootstrap";
 function Header(){
     return (
         <div>
@@ -13,6 +13,7 @@ function Header(){
             <h5>Gyaandock</h5>
             </Col>
         </Row>
+        
         </div>
     );
 
