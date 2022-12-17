@@ -99,6 +99,10 @@ function Auth(){
             axios.post(url+"/api/v1/user/signup",formBody).then(function(response){
                 console.log(response)
                 console.log(response.data);
+                localStorage.setItem("userId",response.data.data.user._id);
+                localStorage.setItem("userName",name);
+                localStorage.setItem("userEmail",email);
+                localStorage.setItem("userScore",0);
                 localStorage.setItem("jwtToken",response.data.token);
                 window.location.reload();
                 // alert("Register Successfull");
