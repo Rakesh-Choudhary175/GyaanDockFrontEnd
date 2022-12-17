@@ -13,6 +13,8 @@ function QuestionHomepage() {
     const [areQuestionsFetched, SetAreQuestionsFetched] = useState(false);
     const [category, SetCategory] = useState([]);
 
+
+   
     const navigate = useNavigate();
 
     useEffect(() => {

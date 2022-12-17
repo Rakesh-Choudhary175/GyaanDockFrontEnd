@@ -45,7 +45,7 @@ function aboutUspage() {
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
-                                <td>Email Id: xyz@gmail.com</td>
+                                <td>Email Id: innobytes@gmail.com</td>
                             </tr>
                             <tr>
                                 <td>Vishwajeet Singh</td>
