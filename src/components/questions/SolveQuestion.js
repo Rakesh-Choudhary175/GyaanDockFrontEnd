@@ -9,6 +9,7 @@ import url from "../../Uri";
 import "./SolveQuestion.css"
 import Navbar from "./Navbar";
 import Compiler from "./Compiler";
+import Comment from "./comments/Comment";
 
 
 function SolveQuestion() {
@@ -80,9 +81,7 @@ function SolveQuestion() {
                                 QuestionDetails()
                                 
                             ):(
-                               
-                                   <h1>Comment</h1> 
-                                
+                               <Comment/>
                             )
                             // QuestionDetails()
                         }
