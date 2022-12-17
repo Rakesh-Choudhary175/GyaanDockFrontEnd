@@ -13,6 +13,17 @@ import Compiler from "./Compiler";
 
 function SolveQuestion() {
 
+    const[isQuestion,SetIsQuestion] = useState(true);
+
+    function showComments(){
+        if(showQuestion!=false)
+            SetIsQuestion(false)
+    }
+
+    function showQuestion(){
+        if(showQuestion!=true)
+            SetIsQuestion(true)
+    }
 
     function QuestionDetails() {
         return (
@@ -54,16 +65,26 @@ function SolveQuestion() {
                     <Card.Header>
                         <Nav justify variant="tabs" defaultActiveKey="/home">
                             <Nav.Item>
-                                <Nav.Link eventKey="questionData">Description</Nav.Link>
+                                <Nav.Link eventKey="questionData" onClick={showQuestion}>Description</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="Comment">Comment</Nav.Link>
+                                <Nav.Link eventKey="Comment" onClick={showComments}>Comment</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Card.Header>
                     <Card.Body>
+                        
                         {
-                            QuestionDetails()
+                            (isQuestion==true)?(
+                                
+                                QuestionDetails()
+                                
+                            ):(
+                               
+                                   <h1>Comment</h1> 
+                                
+                            )
+                            // QuestionDetails()
                         }
                     </Card.Body>
                 </Card>
