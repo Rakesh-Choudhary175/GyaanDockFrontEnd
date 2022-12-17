@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Card, Form } from "react-bootstrap";
+import { Button, Card, Form } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import url from "../../../Uri";
 
@@ -26,8 +26,8 @@ function Comment(){
         }
     })
 
-    const [newComment,SetNewComment] = useState();
-    const [newCode,SetNewCode] = useState();
+    const [newComment,SetNewComment] = useState("");
+    const [newCode,SetNewCode] = useState("");
 
     function inputComment(event){
         SetNewComment(event.target.value);
@@ -35,6 +35,27 @@ function Comment(){
 
     function inputCode(event){
         SetNewCode(event.target.value);
+    }
+
+    function handleAddComment(){
+        if(newComment==="" || newCode===""){
+            alert("Please fill all fields")
+        }else{
+            axios.post(url+"/api/v1/question/"+split[2]+"/comment",{
+                headers:{
+                    'Content-Type': 'application/json',
+                    "Authorization":localStorage.getItem("jwtToken")
+                }
+            })
+            .then(function(response){
+                console.log("response:",response.data);
+                window.location.reload()
+            }).catch(function(error){
+                console.log("Error:",error);
+            })
+            // alert("Comment added")
+            
+        }
     }
 
     function addComment(){
@@ -50,6 +71,7 @@ function Comment(){
                     <Form.Label>Code</Form.Label>
                     <Form.Control type="text" placeholder="Enter Code" />
                 </Form.Group>
+                <Button variant="primary" onClick={handleAddComment}>Add Comment</Button>
             </Form>   
             </Card.Body> 
             </Card>
