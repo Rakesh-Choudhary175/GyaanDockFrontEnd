@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import url from "../../../Uri";
+import userLogo from "../../../assets/User_logo.png"
 
 function Comment() {
 
@@ -84,17 +85,22 @@ function Comment() {
     return (
         <>
             {
+                addComment()
+            }
+            <p></p>
+            {
                 (areCommentsFetched == true) ? (
                     comments.map(c => {
                         return (
                             <>
-                                <Card>
-                                    <Card.Title>{c.comment}</Card.Title>
-                                    <Card.Text>{c.user.name}</Card.Text>
-                                    <Card.Body>{c.code}</Card.Body>
+                                <Card style={{ background: "rgba(0,152,186,0.2)" }}>
+                                    <Card.Text><img src={userLogo} style={{ textAlign: "right", height: "50px", width: "50px" }} /> &emsp;{c.user.name}</Card.Text>
+                                    <Card.Title style={{ margin: "20px" }}>{c.comment}</Card.Title>
+                                    <Card className="text-white" style={{ background: "rgba(120,120,120,0.8)", margin: "20px" }}>
+                                        <Card.Body>{c.code}</Card.Body>
+                                    </Card>
                                 </Card>
-                                <br />
-                                <br />
+                                <p></p>
                             </>
 
                         )
@@ -105,9 +111,6 @@ function Comment() {
             }
 
 
-            {
-                addComment()
-            }
 
         </>
 
