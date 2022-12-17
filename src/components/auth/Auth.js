@@ -146,39 +146,41 @@ function Auth() {
                         <UserProfile />
                     ) : (
                         (isLoginPage == false) ? (
-                            <Card style={{
-                                padding: "30px", background: "rgba(0,152,186,0.2)", width: '30rem', position: "fixed", top: "58%",
-                                left: "50%", transform: "translate(-50%, -50%)"
-                            }}>
-                                <Form>
-                                    <Form.Group className="mb-3" controlId="formBasicName" onChange={inputName}>
-                                        <Form.Label>Name</Form.Label>
-                                        <Form.Control type="text" placeholder="Enter Name" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="formBasicEmail" onChange={inputEmail}>
-                                        <Form.Label>Email address</Form.Label>
-                                        <Form.Control type="email" placeholder="Enter email" />
-                                        <Form.Text className="text-muted">
-                                            We'll never share your email with anyone else.
-                                        </Form.Text>
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="formBasicPassword" onChange={inputPassword}>
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="formBasicConfirmPassword" onChange={inputConfirmPassword}>
-                                        <Form.Label>Confirm Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
-                                    </Form.Group>
+                            <>
+                                <Card style={{
+                                    padding: "30px", background: "rgba(0,152,186,0.2)", width: '30rem', position: "fixed", top: "58%",
+                                    left: "50%", transform: "translate(-50%, -50%)"
+                                }}>
+                                    <Form>
+                                        <Form.Group className="mb-3" controlId="formBasicName" onChange={inputName}>
+                                            <Form.Label>Name</Form.Label>
+                                            <Form.Control type="text" placeholder="Enter Name" />
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicEmail" onChange={inputEmail}>
+                                            <Form.Label>Email address</Form.Label>
+                                            <Form.Control type="email" placeholder="Enter email" />
+                                            <Form.Text className="text-muted">
+                                                We'll never share your email with anyone else.
+                                            </Form.Text>
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicPassword" onChange={inputPassword}>
+                                            <Form.Label>Password</Form.Label>
+                                            <Form.Control type="password" placeholder="Password" />
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicConfirmPassword" onChange={inputConfirmPassword}>
+                                            <Form.Label>Confirm Password</Form.Label>
+                                            <Form.Control type="password" placeholder="Password" />
+                                        </Form.Group>
 
-                                    <a href="/#/signIn" onClick={switchToLogin}>Existing User? Login!!</a>
-                                    <br />
-                                    <br />
-                                    <Button variant="primary" type="submit" onClick={registerUser}>
-                                        Submit
-                                    </Button>
-                                </Form>
-                            </Card>
+                                        <a href="/#/signIn" onClick={switchToLogin}>Existing User? Login!!</a>
+                                        <br />
+                                        <br />
+                                        <Button variant="primary" type="submit" onClick={registerUser}>
+                                            Submit
+                                        </Button>
+                                    </Form>
+                                </Card>
+                            </>
                         ) : (
                             <Card style={{
                                 padding: "30px", background: "rgba(0,152,186,0.2)", width: '30rem', position: "fixed", top: "50%",
