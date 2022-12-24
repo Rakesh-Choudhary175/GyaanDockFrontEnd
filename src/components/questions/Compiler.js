@@ -230,6 +230,7 @@ export default class Compiler extends Component {
                                 value={this.state.input}
                                 onChange={this.input}
                             />
+                            <br />
                             {/* <textarea
                                 required
                                 name="solution"
