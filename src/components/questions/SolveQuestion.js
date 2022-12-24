@@ -28,9 +28,12 @@ function SolveQuestion() {
 
     var question = JSON.parse(localStorage.getItem("question"));
 
+    console.log("Question:", question)
+
 
     function QuestionDetails() {
         return (
+            <>
             <Card>
                 <Card.Body>
                     <Card.Title>{question.title}</Card.Title>
@@ -48,14 +51,33 @@ function SolveQuestion() {
                     </Card.Text>
                     <Card.Title>Sample Input</Card.Title>
                     <Card.Text>
-                        {question.sample_input}
+                    {
+                        question.sample_input.split("\n").map((item) => {
+                            return(
+                                <span>{item}<br/></span>
+                            )
+                        })
+                    }
+                    {/* {
+                        question.sample_input
+                    } */}
                     </Card.Text>
                     <Card.Title>Sample Output</Card.Title>
                     <Card.Text>
-                        {question.sample_output}
+                    {
+                        question.sample_output.split("\n").map((item) => {
+                            return(
+                                <span>{item}<br/></span>
+                            )
+                        })
+                    }
                     </Card.Text>
                 </Card.Body>
             </Card>
+            <br/>
+            <br/>
+
+            </>
         )
     }
 
