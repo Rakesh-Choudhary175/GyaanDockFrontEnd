@@ -6,13 +6,18 @@ import "./Compiler.css";
 
 
 export default class Compiler extends Component {
+
+
+
     constructor(props) {
+        // const question = JSON.parse(localStorage.getItem("question"));
         super(props);
         this.state = {
             input: localStorage.getItem('input') || `test`,
             output: ``,
             language_id: localStorage.getItem('language_Id') || 1,
             user_input: ``,
+            question: JSON.parse(localStorage.getItem("question")),
         };
     }
     input = (event) => {
@@ -96,7 +101,7 @@ export default class Compiler extends Component {
 
             outputText.innerHTML = "";
 
-            outputText.innerHTML += `Results :\n${output}\nExecution Time : ${jsonGetSolution.time} Secs\nMemory used : ${jsonGetSolution.memory} bytes`;
+            outputText.innerHTML += `${output}`;
         } else if (jsonGetSolution.stderr) {
             const error = atob(jsonGetSolution.stderr);
 
@@ -130,7 +135,7 @@ export default class Compiler extends Component {
                 },
                 body: JSON.stringify({
                     source_code: this.state.input,
-                    stdin: this.state.user_input,
+                    stdin: this.state.question.test_case,
                     language_id: this.state.language_id,
                 }),
             }
@@ -166,9 +171,9 @@ export default class Compiler extends Component {
 
         if (jsonGetSolution.stdout) {
             const output = atob(jsonGetSolution.stdout);
-            const ans = '0\n1\n2\n3\n4\n5\n';
+            const ans = this.state.question.test_result
             outputText.innerHTML = "";
-            if (output === ans) {
+            if (output === ans || output === ans + "\n") {
                 outputText.innerHTML += `ans is right`;
             }
             else {
@@ -219,7 +224,7 @@ export default class Compiler extends Component {
                                 language={this.state.language_id}
                                 theme={"vs-dark"}
                             /> */}
-                            <Editor
+                            {/* <Editor
                                 options={{ fontSize: "20" }}
                                 height="calc(100vh - 50px)"
                                 width="100%"
@@ -229,16 +234,15 @@ export default class Compiler extends Component {
                                 defaultValue="# Enter your code here"
                                 value={this.state.input}
                                 onChange={this.input}
-                            />
-                            <br />
-                            {/* <textarea
+                            /> */}
+                            <textarea
                                 required
                                 name="solution"
                                 id="source"
                                 onChange={this.input}
                                 className=" source"
                                 value={this.state.input}
-                            ></textarea> */}
+                            ></textarea>
 
 
                             <Button variant="outline-secondary" type="Compile" onClick={this.submit}>
