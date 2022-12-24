@@ -14,7 +14,7 @@ function QuestionHomepage() {
     const [category, SetCategory] = useState([]);
 
 
-   
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -47,22 +47,22 @@ function QuestionHomepage() {
 
     }
 
-    function handleEasyClick(){
+    function handleEasyClick() {
         // alert("Easy Clicked");
-        var arr=[];
-        questions.map((question)=>{
-            if(question.difficulty=="easy"){
+        var arr = [];
+        questions.map((question) => {
+            if (question.difficulty == "easy") {
                 arr.push(question);
             }
         })
         SetFilteredQuestions([...arr]);
     }
 
-    function handleMediumClick(){
+    function handleMediumClick() {
         // alert("Medium Clicked");
-        var arr=[];
-        questions.map((question)=>{
-            if(question.difficulty==="medium"){
+        var arr = [];
+        questions.map((question) => {
+            if (question.difficulty === "medium") {
                 arr.push(question);
             }
         }
@@ -70,11 +70,11 @@ function QuestionHomepage() {
         SetFilteredQuestions([...arr]);
     }
 
-    function handleHardClick(){
+    function handleHardClick() {
         // alert("Hard Clicked");
-        var arr=[];
-        questions.map((question)=>{
-            if(question.difficulty==="hard"){
+        var arr = [];
+        questions.map((question) => {
+            if (question.difficulty === "hard") {
                 arr.push(question);
             }
         }
@@ -83,27 +83,27 @@ function QuestionHomepage() {
 
     }
 
-    function handleAllClick(){
+    function handleAllClick() {
         // alert("All Clicked");
         SetFilteredQuestions([...questions]);
     }
 
-    function handleSolvedClick(){
+    function handleSolvedClick() {
         alert("Solved Clicked");
     }
 
-    function handleUnsolvedClick(){
+    function handleUnsolvedClick() {
         alert("Unsolved Clicked");
     }
 
-    function handleCategoryClick(cat){
+    function handleCategoryClick(cat) {
         // alert("Category Clicked:"+cat);
-        var arr=[];
-        questions.map((question)=>{
-            if(question.category===cat){
+        var arr = [];
+        questions.map((question) => {
+            if (question.category === cat) {
                 arr.push(question);
             }
-        
+
         })
         SetFilteredQuestions([...arr]);
 
@@ -120,9 +120,9 @@ function QuestionHomepage() {
 
                     <Dropdown.Menu>
                         <Dropdown.Item href="#" onClick={handleEasyClick}>Easy</Dropdown.Item>
-                        <Dropdown.Item href="#"onClick={handleMediumClick}>Medium</Dropdown.Item>
-                        <Dropdown.Item href="#"onClick={handleHardClick}>Hard</Dropdown.Item>
-                        <Dropdown.Item href="#"onClick={handleAllClick}>All</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={handleMediumClick}>Medium</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={handleHardClick}>Hard</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={handleAllClick}>All</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -158,7 +158,7 @@ function QuestionHomepage() {
                         {
                             category.map((cat) => {
                                 return (
-                                    <Dropdown.Item href="#" onClick={()=>handleCategoryClick(cat)}>{cat}</Dropdown.Item>
+                                    <Dropdown.Item href="#" onClick={() => handleCategoryClick(cat)}>{cat}</Dropdown.Item>
                                 )
                             })
                         }

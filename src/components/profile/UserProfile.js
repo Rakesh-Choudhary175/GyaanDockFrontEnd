@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Button, Card, CardGroup, Row, Col } from "react-bootstrap";
+import { Button, Card, CardGroup, InputGroup, Form, Row, Col } from "react-bootstrap";
 import url from "../../Uri";
 import logo from "../../assets/logo.png"
 
@@ -8,6 +8,7 @@ function UserProfile() {
 
     const [name, setName] = useState(localStorage.getItem("userName"));
     const [email, setEmail] = useState(localStorage.getItem("userEmail"));
+    const [education, setEducation] = useState(localStorage.getItem("userEducation"));
     const [password, setPassword] = useState("");
     const [score, setScore] = useState(localStorage.getItem("userScore"));
     const [nosOfSolvedQuestions, setNosOfSolvedQuestions] = useState(0);
@@ -35,6 +36,7 @@ function UserProfile() {
                                 <h2 >Name: {name}</h2>
                             </Card.Title>
                             <Card.Text><h3>Email:  {email}</h3></Card.Text>
+                            <Card.Text><h3>Education:  {education}</h3></Card.Text>
                         </Col>
                     </Row>
                 </Card.Body>
@@ -46,6 +48,44 @@ function UserProfile() {
             </Card>
 
             <br />
+            <Card style={{ padding: "30px", background: "rgba(0,152,186,0.2)" }}>
+                <br />
+                <Card.Title>Change User name</Card.Title>
+                <Card.Body>
+                    <InputGroup className="mb-3">
+                        <Form.Control
+                            placeholder="User Name"
+                            aria-label="Small"
+                            aria-describedby="inputGroup-sizing-sm"
+                        />
+                    </InputGroup>
+                </Card.Body>
+                <div className="d-grid gap-2">
+                    <Button size="md" onClick={handleLogOut}>Update User Name</Button>
+                </div>
+            </Card>
+            <br />
+            <Card style={{ padding: "10px", background: "rgba(0,152,186,0.2)" }}>
+                <br />
+                <Card.Title>Change User name</Card.Title>
+                <Card.Body>
+                    <Form.Group className="mb-3" controlId="formBasicPassword" >
+                        <Form.Control type="password" placeholder="Current Password" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword" >
+                        <Form.Control type="password" placeholder="New Password" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword" >
+                        <Form.Control type="password" placeholder="Confirm New Password" />
+                    </Form.Group>
+                </Card.Body>
+                <div className="d-grid gap-2">
+                    <Button size="md" onClick={handleLogOut}>Update Password</Button>
+                </div>
+            </Card>
+
+            <br />
+
 
             <div className="d-grid gap-2">
                 <Button size="lg" onClick={handleLogOut}>Log Out</Button>

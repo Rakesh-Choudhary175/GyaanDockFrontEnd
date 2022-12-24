@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Card, Button, DropdownButton, Dropdown, Nav, Row, Col, Container } from "react-bootstrap";
+import Editor from "@monaco-editor/react";
 
 import "./Compiler.css";
+
+
 export default class Compiler extends Component {
     constructor(props) {
         super(props);
@@ -20,6 +23,8 @@ export default class Compiler extends Component {
         localStorage.setItem('input', event.target.value)
 
     };
+
+
     userInput = (event) => {
         event.preventDefault();
         this.setState({ user_input: event.target.value });
@@ -206,14 +211,33 @@ export default class Compiler extends Component {
                                 <option value="62">Java</option>
                                 <option value="71">Python</option>
                             </select>
-                            <textarea
+
+
+                            {/* <CodeEditorWindow
+                                code={this.state.input}
+                                // onChange={onChange}
+                                language={this.state.language_id}
+                                theme={"vs-dark"}
+                            /> */}
+                            <Editor
+                                options={{ fontSize: "20" }}
+                                height="calc(100vh - 50px)"
+                                width="100%"
+                                theme={"vs-dark"}
+                                language={this.state.language_id}
+                                defaultLanguage="python"
+                                defaultValue="# Enter your code here"
+                                value={this.state.input}
+                                onChange={this.input}
+                            />
+                            {/* <textarea
                                 required
                                 name="solution"
                                 id="source"
                                 onChange={this.input}
                                 className=" source"
                                 value={this.state.input}
-                            ></textarea>
+                            ></textarea> */}
 
 
                             <Button variant="outline-secondary" type="Compile" onClick={this.submit}>
