@@ -41,7 +41,9 @@ function QuestionHomepage() {
             alert("Please login to attempt the question");
             return;
         } else {
+            localStorage.setItem("question", JSON.stringify(question));
             navigate('/questions/' + question.id)
+
         }
 
 
