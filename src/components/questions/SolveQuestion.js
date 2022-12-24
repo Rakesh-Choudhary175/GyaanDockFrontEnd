@@ -26,38 +26,40 @@ function SolveQuestion() {
             SetIsQuestion(true)
     }
 
+    var question = JSON.parse(localStorage.getItem("question"));
+
+
     function QuestionDetails() {
         return (
             <Card>
                 <Card.Body>
-                    <Card.Title>Question Title</Card.Title>
+                    <Card.Title>{question.title}</Card.Title>
                     <Card.Text>
-                        This challenge works with a custom-designed markup language HRML. In HRML, each element consists of a starting and ending tag, and there are attributes associated with each tag. Only starting tags can have attributes. We can call an attribute by referencing the tag, followed by a tilde, '~' and the name of the attribute. The tags may also be nested.
+                        {question.description}
                     </Card.Text>
-                    <Card.Title>Example</Card.Title>
-                    <Card.Text>
-                        Question Example
-                    </Card.Text>
+
                     <Card.Title>Input Format</Card.Title>
                     <Card.Text>
-                        Question Input Format
+                        {question.input_format}
                     </Card.Text>
                     <Card.Title>Output Format</Card.Title>
                     <Card.Text>
-                        Question Output Format
+                        {question.output_format}
                     </Card.Text>
                     <Card.Title>Sample Input</Card.Title>
                     <Card.Text>
-                        Question Sample Input
+                        {question.sample_input}
                     </Card.Text>
                     <Card.Title>Sample Output</Card.Title>
                     <Card.Text>
-                        Question Sample Output
+                        {question.sample_output}
                     </Card.Text>
                 </Card.Body>
             </Card>
         )
     }
+
+    
 
     function fetchQuestionDetails() {
         return (
