@@ -3,6 +3,9 @@ import { Card, Button, DropdownButton, Dropdown, Nav, Row, Col, Container } from
 import Editor from "@monaco-editor/react";
 
 import "./Compiler.css";
+import url from "../../Uri";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 export default class Compiler extends Component {
@@ -12,6 +15,8 @@ export default class Compiler extends Component {
     constructor(props) {
         // const question = JSON.parse(localStorage.getItem("question"));
         super(props);
+        
+
         this.state = {
             input: localStorage.getItem('input') || `test`,
             output: ``,
@@ -48,14 +53,14 @@ export default class Compiler extends Component {
 
         let outputText = document.getElementById("output");
         outputText.innerHTML = "";
-        outputText.innerHTML += "Creating Submission ...\n";
+        outputText.innerHTML += "Running  Code ...\n";
         const response = await fetch(
             "https://judge0-ce.p.rapidapi.com/submissions",
             {
                 method: "POST",
                 headers: {
                     "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                    "x-rapidapi-key": "9b2bfe5c20msh2b3bd9b41f2b80dp127632jsn8f2c7d652893", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                    "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                     "content-type": "application/json",
                     accept: "application/json",
                 },
@@ -66,7 +71,7 @@ export default class Compiler extends Component {
                 }),
             }
         );
-        outputText.innerHTML += "Submission Created ...\n";
+        // outputText.innerHTML += "Submission Created ...\n";
         const jsonResponse = await response.json();
 
         let jsonGetSolution = {
@@ -88,7 +93,7 @@ export default class Compiler extends Component {
                     method: "GET",
                     headers: {
                         "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                        "x-rapidapi-key": "9b2bfe5c20msh2b3bd9b41f2b80dp127632jsn8f2c7d652893", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                        "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                         "content-type": "application/json",
                     },
                 });
@@ -117,19 +122,47 @@ export default class Compiler extends Component {
         }
     };
 
+
+
+
+    // updateScore=()=> {
+    //     // const navigate = useNavigate()
+    //     console.log("updateScore"); 
+        
+    //     axios.patch(url + "/api/v1/question/" + this.state.question._id+"/submit",{
+    //         headers:{
+    //             "Content-Type": "application/json",
+    //             "Authorization": localStorage.getItem("jwtToken")
+    //         }
+    //     }).then((res)=>{
+    //         console.log(res);
+    //         alert("Score Updated")
+    //         window.location.reload()
+    //     }).catch((err)=>{
+    //         console.log(err);
+    //     })
+
+       
+        
+        
+    // }
+
     submitAns = async (e) => {
         e.preventDefault();
 
+
+        console.log("submitAns", this.state.question.test_case);
         let outputText = document.getElementById("output");
         outputText.innerHTML = "";
 
+        outputText.innerHTML += "Creating Submission ...\n";
         const response = await fetch(
             "https://judge0-ce.p.rapidapi.com/submissions",
             {
                 method: "POST",
                 headers: {
                     "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                    "x-rapidapi-key": "9b2bfe5c20msh2b3bd9b41f2b80dp127632jsn8f2c7d652893", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                    "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                     "content-type": "application/json",
                     accept: "application/json",
                 },
@@ -160,7 +193,7 @@ export default class Compiler extends Component {
                     method: "GET",
                     headers: {
                         "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                        "x-rapidapi-key": "9b2bfe5c20msh2b3bd9b41f2b80dp127632jsn8f2c7d652893", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                        "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                         "content-type": "application/json",
                     },
                 });
@@ -173,11 +206,14 @@ export default class Compiler extends Component {
             const output = atob(jsonGetSolution.stdout);
             const ans = this.state.question.test_result
             outputText.innerHTML = "";
-            if (output === ans || output === ans + "\n") {
-                outputText.innerHTML += `ans is right`;
+            if (output === ans || output === ans + "\n" || output === ans + " ") {
+                outputText.innerHTML += `Correct answer!!`;
+                // this.updateScore();
             }
             else {
-                outputText.innerHTML += `ans is worng`;
+                outputText.innerHTML += `Wrong answer!!`;
+                outputText.innerHTML += `\n Your output :${output}`;
+                outputText.innerHTML += `\n Expected output :${ans}`;
             }
         } else if (jsonGetSolution.stderr) {
             const error = atob(jsonGetSolution.stderr);
