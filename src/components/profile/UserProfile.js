@@ -26,6 +26,28 @@ function UserProfile() {
         window.location.reload();
     }
 
+    const updateUserName = () => {
+
+        const callUpdateUserName = async () => {
+            try {
+                const res = await fetch('api/v1/user/updateMe', {
+                    method: "PATCH",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                        "Authorization": localStorage.getItem("jwtToken")
+                    },
+                    credentials: "include"
+                });
+                const data = await res.json();
+                console.log(data);
+
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+    }
 
     return (
         <div>
@@ -52,7 +74,7 @@ function UserProfile() {
             </Card>
 
             <br />
-            <Card style={{ padding: "30px", background: "rgba(0,152,186,0.2)" }}>
+            {/* <Card style={{ padding: "30px", background: "rgba(0,152,186,0.2)" }}>
                 <br />
                 <Card.Title>Change User name</Card.Title>
                 <Card.Body>
@@ -71,7 +93,7 @@ function UserProfile() {
             <br />
             <Card style={{ padding: "10px", background: "rgba(0,152,186,0.2)" }}>
                 <br />
-                <Card.Title>Change User name</Card.Title>
+                <Card.Title>Change Password</Card.Title>
                 <Card.Body>
                     <Form.Group className="mb-3" controlId="formBasicPassword" >
                         <Form.Control type="password" placeholder="Current Password" />
@@ -88,7 +110,7 @@ function UserProfile() {
                 </div>
             </Card>
 
-            <br />
+            <br /> */}
 
 
             <div className="d-grid gap-2">

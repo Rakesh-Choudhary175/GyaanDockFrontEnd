@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export default class Compiler extends Component {
 
-    
+
 
     constructor(props) {
         // const question = JSON.parse(localStorage.getItem("question"));
