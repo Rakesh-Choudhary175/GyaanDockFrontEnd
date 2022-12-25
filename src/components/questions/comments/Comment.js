@@ -42,23 +42,28 @@ function Comment() {
         if (newComment === "" || newCode === "") {
             alert("Please fill all fields")
         } else {
-            console.log(localStorage.getItem("jwtToken"))
-            const data = JSON.stringify({ inputComment, inputCode });
-            axios.post(url + "/api/v1/question/" + split[2] + "/comment", data, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": localStorage.getItem("jwtToken"),
-                    "Access-Control-Allow-Origin": "*",
-                }
-            })
-                .then(function (response) {
-                    console.log(response.data);
-                    window.location.reload()
-                }).catch(function (error) {
-                    console.log("Error:", error);
-                })
-            alert("Comment added")
+            // console.log(localStorage.getItem("jwtToken"))
+            // const data = JSON.stringify({ inputComment, inputCode });
+            // axios.post(url + "/api/v1/question/" + split[2] + "/comment", data, {
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //         "Authorization": localStorage.getItem("jwtToken"),
+            //         "Access-Control-Allow-Origin": "*",
+            //     }
+            // })
+            //     .then(function (response) {
+            //         console.log(response.data);
+            //         window.location.reload()
+            //     }).catch(function (error) {
+            //         console.log("Error:", error);
+            //     })
+            // alert("Comment added")
+            var arr=[];
 
+            // var arr= comments;
+            arr.push({comment: newComment, code: newCode, user: {name: "User", profilePic: userLogo}})
+            arr.push(...comments)
+            setComments([...arr])
         }
     }
 
