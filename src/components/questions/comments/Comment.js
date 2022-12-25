@@ -97,7 +97,11 @@ function Comment() {
                                     <Card.Text><img src={userLogo} style={{ textAlign: "right", height: "50px", width: "50px" }} /> &emsp;{c.user.name}</Card.Text>
                                     <Card.Title style={{ margin: "20px" }}>{c.comment}</Card.Title>
                                     <Card className="text-white" style={{ background: "rgba(120,120,120,0.8)", margin: "20px" }}>
-                                        <Card.Body>{c.code}</Card.Body>
+                                        <Card.Body>{c.code.split("\n").map((item) => {
+                                            return (
+                                                <span>{item}<br /></span>
+                                            )
+                                        })}</Card.Body>
                                     </Card>
                                 </Card>
                                 <p></p>

@@ -15,7 +15,7 @@ export default class Compiler extends Component {
     constructor(props) {
         // const question = JSON.parse(localStorage.getItem("question"));
         super(props);
-        
+
 
         this.state = {
             input: localStorage.getItem('input') || `test`,
@@ -60,7 +60,7 @@ export default class Compiler extends Component {
                 method: "POST",
                 headers: {
                     "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                    "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                    "x-rapidapi-key": "49fb9d4be1mshcb3e33ee4a39d2ap1c1117jsne33fe00df182", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                     "content-type": "application/json",
                     accept: "application/json",
                 },
@@ -93,7 +93,7 @@ export default class Compiler extends Component {
                     method: "GET",
                     headers: {
                         "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                        "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                        "x-rapidapi-key": "49fb9d4be1mshcb3e33ee4a39d2ap1c1117jsne33fe00df182", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                         "content-type": "application/json",
                     },
                 });
@@ -125,27 +125,40 @@ export default class Compiler extends Component {
 
 
 
-    // updateScore=()=> {
-    //     // const navigate = useNavigate()
-    //     console.log("updateScore"); 
-        
-    //     axios.patch(url + "/api/v1/question/" + this.state.question._id+"/submit",{
-    //         headers:{
-    //             "Content-Type": "application/json",
-    //             "Authorization": localStorage.getItem("jwtToken")
-    //         }
-    //     }).then((res)=>{
-    //         console.log(res);
-    //         alert("Score Updated")
-    //         window.location.reload()
-    //     }).catch((err)=>{
-    //         console.log(err);
-    //     })
+    updateScore = async () => {
+        // const navigate = useNavigate()
+        console.log(localStorage.getItem("jwtToken"));
 
-       
-        
-        
-    // }
+        try {
+            const res = await fetch(url + "/api/v1/question/" + this.state.question._id + "/submit", {
+                method: "PATCH",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                    "Authorization": localStorage.getItem("jwtToken")
+                },
+                credentials: "include"
+            });
+            const data = await res.json();
+            console.log(data);
+
+        } catch (err) {
+            console.log(err);
+        }
+
+        // axios.patch("/api/v1/question/" + this.state.question._id + "/submit", {
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         "Authorization": localStorage.getItem("jwtToken")
+        //     }
+        // }).then((res) => {
+        //     console.log(res);
+        //     alert("Score Updated")
+        //     window.location.reload()
+        // }).catch((err) => {
+        //     console.log(err);
+        // })
+    }
 
     submitAns = async (e) => {
         e.preventDefault();
@@ -162,7 +175,7 @@ export default class Compiler extends Component {
                 method: "POST",
                 headers: {
                     "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                    "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                    "x-rapidapi-key": "49fb9d4be1mshcb3e33ee4a39d2ap1c1117jsne33fe00df182", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                     "content-type": "application/json",
                     accept: "application/json",
                 },
@@ -193,7 +206,7 @@ export default class Compiler extends Component {
                     method: "GET",
                     headers: {
                         "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
-                        "x-rapidapi-key": "13daf2b5b1msh647b5bfa489ad43p1b0de4jsn0d7dc779156f", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+                        "x-rapidapi-key": "49fb9d4be1mshcb3e33ee4a39d2ap1c1117jsne33fe00df182", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
                         "content-type": "application/json",
                     },
                 });
@@ -208,7 +221,7 @@ export default class Compiler extends Component {
             outputText.innerHTML = "";
             if (output === ans || output === ans + "\n" || output === ans + " ") {
                 outputText.innerHTML += `Correct answer!!`;
-                // this.updateScore();
+                this.updateScore();
             }
             else {
                 outputText.innerHTML += `Wrong answer!!`;
