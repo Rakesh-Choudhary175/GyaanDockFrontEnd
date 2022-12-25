@@ -11,7 +11,7 @@ function UserProfile() {
     const [education, setEducation] = useState(localStorage.getItem("userEducation"));
     const [password, setPassword] = useState("");
     var sc = 0;
-    if(localStorage.getItem("userScore") != null){
+    if (localStorage.getItem("userScore") != null) {
         sc = localStorage.getItem("userScore");
     }
     const [score, setScore] = useState(sc);
@@ -62,7 +62,6 @@ function UserProfile() {
                                 <h2 >Name: {name}</h2>
                             </Card.Title>
                             <Card.Text><h3>Email:  {email}</h3></Card.Text>
-                            <Card.Text><h3>Education:  {education}</h3></Card.Text>
                         </Col>
                     </Row>
                 </Card.Body>

@@ -125,50 +125,50 @@ export default class Compiler extends Component {
 
 
 
-    updateScore = async () => {
-        // const navigate = useNavigate()
-        console.log(localStorage.getItem("jwtToken"));
+    // updateScore = async () => {
+    //     // const navigate = useNavigate()
+    //     console.log(localStorage.getItem("jwtToken"));
 
-        try {
-            const res = await fetch(url + "/api/v1/question/" + this.state.question._id + "/submit", {
-                method: "PATCH",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    "Authorization": localStorage.getItem("jwtToken")
-                },
-                credentials: "include"
-            });
-            const data = await res.json();
-            console.log(data);
+    //     try {
+    //         const res = await fetch(url + "/api/v1/question/" + this.state.question._id + "/submit", {
+    //             method: "PATCH",
+    //             headers: {
+    //                 Accept: "application/json",
+    //                 "Content-Type": "application/json",
+    //                 "Authorization": localStorage.getItem("jwtToken")
+    //             },
+    //             credentials: "include"
+    //         });
+    //         const data = await res.json();
+    //         console.log(data);
 
-        } catch (err) {
-            console.log(err);
-        }
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
 
-        // axios.patch("/api/v1/question/" + this.state.question._id + "/submit", {
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Authorization": localStorage.getItem("jwtToken")
-        //     }
-        // }).then((res) => {
-        //     console.log(res);
-        //     alert("Score Updated")
-        //     window.location.reload()
-        // }).catch((err) => {
-        //     console.log(err);
-        // })
-    }
+    //     // axios.patch("/api/v1/question/" + this.state.question._id + "/submit", {
+    //     //     headers: {
+    //     //         "Content-Type": "application/json",
+    //     //         "Authorization": localStorage.getItem("jwtToken")
+    //     //     }
+    //     // }).then((res) => {
+    //     //     console.log(res);
+    //     //     alert("Score Updated")
+    //     //     window.location.reload()
+    //     // }).catch((err) => {
+    //     //     console.log(err);
+    //     // })
+    // }
 
-    updateScore=()=> {
+    updateScore = () => {
         // const navigate = useNavigate()
         alert("Hurrah You solved the question!!")
         console.log("updateScore");
-        if(localStorage.getItem("userScore")!=null){
-            let score=parseInt(localStorage.getItem("userScore"))+parseInt(this.state.question.score)
-            localStorage.setItem("userScore",score)
-        }else{
-            localStorage.setItem("userScore",this.state.question.score)
+        if (localStorage.getItem("userScore") != null) {
+            let score = parseInt(localStorage.getItem("userScore")) + parseInt(this.state.question.score)
+            localStorage.setItem("userScore", score)
+        } else {
+            localStorage.setItem("userScore", this.state.question.score)
         }
         window.location.reload();
     }
