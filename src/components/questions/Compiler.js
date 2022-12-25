@@ -160,6 +160,19 @@ export default class Compiler extends Component {
         // })
     }
 
+    updateScore=()=> {
+        // const navigate = useNavigate()
+        alert("Hurrah You solved the question!!")
+        console.log("updateScore");
+        if(localStorage.getItem("userScore")!=null){
+            let score=parseInt(localStorage.getItem("userScore"))+parseInt(this.state.question.score)
+            localStorage.setItem("userScore",score)
+        }else{
+            localStorage.setItem("userScore",this.state.question.score)
+        }
+        window.location.reload();
+    }
+
     submitAns = async (e) => {
         e.preventDefault();
 
