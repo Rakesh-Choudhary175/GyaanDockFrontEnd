@@ -10,7 +10,11 @@ function UserProfile() {
     const [email, setEmail] = useState(localStorage.getItem("userEmail"));
     const [education, setEducation] = useState(localStorage.getItem("userEducation"));
     const [password, setPassword] = useState("");
-    const [score, setScore] = useState(localStorage.getItem("userScore"));
+    var sc = 0;
+    if(localStorage.getItem("userScore") != null){
+        sc = localStorage.getItem("userScore");
+    }
+    const [score, setScore] = useState(sc);
     const [nosOfSolvedQuestions, setNosOfSolvedQuestions] = useState(0);
     const [isUserDetailsFetched, setIsUserDetailsFetched] = useState(false);
 
