@@ -1,3 +1,3 @@
-var url = "http://localhost:5000"
+var url = "https://gyaandockbackend.onrender.com";
 
 export default url;

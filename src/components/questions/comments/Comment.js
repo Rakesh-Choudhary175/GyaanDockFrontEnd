@@ -6,7 +6,7 @@ import url from "../../../Uri";
 import userLogo from "../../../assets/User_logo.png"
 
 function Comment() {
-
+    
     const [comments, setComments] = useState([]);
     const [areCommentsFetched, SetAreCommentsFetched] = useState(false);
 

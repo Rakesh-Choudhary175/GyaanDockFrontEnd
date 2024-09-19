@@ -130,7 +130,7 @@ function QuestionHomepage() {
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-                <Dropdown className="d-inline mx-5">
+                {/* <Dropdown className="d-inline mx-5">
                     <Dropdown.Toggle >
                         Status
                     </Dropdown.Toggle>
@@ -140,10 +140,14 @@ function QuestionHomepage() {
                         <Dropdown.Item href="#" onClick={handleUnsolvedClick}>Unsolved</Dropdown.Item>
                         <Dropdown.Item href="#" onClick={handleAllClick}>All</Dropdown.Item>
                     </Dropdown.Menu>
-                </Dropdown>
+                </Dropdown> */}
 
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                &emsp;&emsp;
 
                 <Dropdown className="d-inline mx-5">
                     <Dropdown.Toggle>
